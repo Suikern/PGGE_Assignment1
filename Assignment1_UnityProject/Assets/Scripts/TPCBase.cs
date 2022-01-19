@@ -43,6 +43,16 @@ namespace PGGE
             // find the nearest collision point to the player
             // shift the camera position to the nearest intersected point
             //-------------------------------------------------------------------
+            LayerMask mask = LayerMask.GetMask("Wall");
+            //float smooth = 2f;
+            Vector3 cameraPos = mCameraTransform.position;
+            Vector3 rawDirection = (mPlayerTransform.position - mCameraTransform.position);
+            Vector3 direction = rawDirection.normalized;
+            if (Physics.SphereCast(cameraPos, .2f, direction, out RaycastHit hit, Mathf.Infinity, mask)){
+                mCameraTransform.position += (rawDirection - direction);
+                Debug.Log("AAAAAA");
+                
+            }
         }
 
         public abstract void Update();
