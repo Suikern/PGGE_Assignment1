@@ -44,12 +44,14 @@ namespace PGGE
             // shift the camera position to the nearest intersected point
             //-------------------------------------------------------------------
             LayerMask mask = LayerMask.GetMask("Wall");
-            //float smooth = 2f;
+            float smoothing = 2f;
             Vector3 cameraPos = mCameraTransform.position;
-            Vector3 rawDirection = (mPlayerTransform.position - mCameraTransform.position);
-            Vector3 direction = rawDirection.normalized;
-            if (Physics.SphereCast(cameraPos, .2f, direction, out RaycastHit hit, Mathf.Infinity, mask)){
-                mCameraTransform.position += (rawDirection - direction);
+            Vector3 distance = (mPlayerTransform.position - mCameraTransform.position);
+            Vector3 direction = distance.normalized;
+            RaycastHit hit;
+            while ( )
+            if (Physics.SphereCast(cameraPos, 0.2f, direction, out hit, Mathf.Infinity, mask)){
+                mCameraTransform.Translate((hit.point + direction) * Time.deltaTime * smoothing);
                 Debug.Log("AAAAAA");
                 
             }
