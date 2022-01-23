@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             jump = false;
         }
-        if (punch)
+        if (punch) //For my new character
         {
             Punch();
             punch = false;
@@ -154,11 +154,11 @@ public class PlayerMovement : MonoBehaviour
             CameraConstants.CameraPositionOffset = tempHeight;
         }
     }
-    void Punch()
+    void Punch()//punch animation
     {
             mAnimator.SetTrigger("Attack");
     }
-    void Block()
+    void Block()//block animation
     {
         mAnimator.SetTrigger("Block");
     }
