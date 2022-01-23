@@ -300,6 +300,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2145642068}
     m_Modifications:
+    - target: {fileID: 371571154686232140, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: mAudioClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 371571154686232140, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: mAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 879b6f486ac089f499189088625009cd, type: 3}
+    - target: {fileID: 371571154686232140, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: mAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 69992d4bcac6b6f44a41b6e384331fd6, type: 3}
+    - target: {fileID: 371571154686232140, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: mAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 02a53e382acf47c4c8a5953baa9ebf89, type: 3}
+    - target: {fileID: 371571154686232140, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: mAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: e469a8bb2a1383d43ab4104db2b469f9, type: 3}
     - target: {fileID: 7673487250857332701, guid: c98043d57e0190845b790d7b92990bee, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1010,7 +1030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1018954551
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,7 +1572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2145642068
 Transform:
   m_ObjectHideFlags: 0

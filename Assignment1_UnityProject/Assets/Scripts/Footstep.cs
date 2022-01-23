@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Footstep : MonoBehaviour
 {
     [SerializeField]
@@ -21,6 +22,7 @@ public class Footstep : MonoBehaviour
 
     private AudioClip GetRandomClip()
     {
-        return mAudioClips[Random.Range(0, mAudioClips.Length)];
+        int index = Random.Range(0, mAudioClips.Length);
+        return mAudioClips[index];
     }
 }
