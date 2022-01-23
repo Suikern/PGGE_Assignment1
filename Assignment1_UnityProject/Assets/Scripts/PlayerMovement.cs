@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private float hInput;
     private float vInput;
     private float speed;
+    private bool block = false;
+    private bool punch = false;
     private bool jump = false;
     private bool crouch = false;
     public float mGravity = -30.0f;
@@ -78,6 +80,16 @@ public class PlayerMovement : MonoBehaviour
             crouch = !crouch;
             Crouch();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            punch = !punch;
+            Punch();
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            block = !block;
+            Block();
+        }
     }
 
     public void Move()
@@ -112,6 +124,11 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             jump = false;
         }
+        if (punch)
+        {
+            Punch();
+            punch = false;
+        }
     }
 
     void Jump()
@@ -136,6 +153,14 @@ public class PlayerMovement : MonoBehaviour
         {
             CameraConstants.CameraPositionOffset = tempHeight;
         }
+    }
+    void Punch()
+    {
+            mAnimator.SetTrigger("Attack");
+    }
+    void Block()
+    {
+        mAnimator.SetTrigger("Block");
     }
 
     void ApplyGravity()
