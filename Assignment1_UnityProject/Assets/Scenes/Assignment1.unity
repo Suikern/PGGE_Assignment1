@@ -1113,14 +1113,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPlayer: {fileID: 2145642068}
-  mPositionOffset: {x: 1, y: 10, z: -2.5}
+  mPositionOffset: {x: 1, y: 2, z: -2.5}
   mAngleOffset: {x: 0, y: 0, z: 0}
   mDamping: 10
   mMinPitch: -30
   mMaxPitch: 30
   mRotationSpeed: 5
   mTouchField: {fileID: 1263475373}
-  mCameraType: 3
+  mCameraType: 2
 --- !u!1 &1018954550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2063,7 @@ GameObject:
   - component: {fileID: 2130710309}
   - component: {fileID: 2130710308}
   - component: {fileID: 2130710307}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

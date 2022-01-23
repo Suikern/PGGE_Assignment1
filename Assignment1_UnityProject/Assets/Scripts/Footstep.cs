@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class Footstep : MonoBehaviour
-{
+{//Create fields for all audioclip types
     [SerializeField]
     private AudioClip[] concreteAudioClips;
     [SerializeField]
@@ -26,7 +26,7 @@ public class Footstep : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 3))
-        {
+        {//raycast downwards from player to check terrain type, play the corresponding audioclip with variation between the 4-6 audio clips
 
             if (hit.transform.CompareTag("Concrete"))
             {
@@ -59,53 +59,6 @@ public class Footstep : MonoBehaviour
                 mAudioSource.PlayOneShot(clip);
             }
         }
-        //CheckTerrain();
-        //AudioClip clip = GetRandomClip(dirtAudioClips);
-        //mAudioSource.PlayOneShot(clip);
+     
     }
-    
-
-    //private AudioClip GetRandomClip(AudioClip[] a)
-    //{
-    //    int index = Random.Range(0, a.Length);
-    //    return a[index];
-    //}
-    //private AudioClip CheckTerrain()
-    //{
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(transform.position, Vector3.down, out hit, 3))
-    //    {
-
-    //        if (hit.transform.CompareTag("Concrete"))
-    //        {
-    //            int index = Random.Range(0, concreteAudioClips.Length);
-    //            return concreteAudioClips[index];
-    //        }
-    //        if (hit.transform.CompareTag("Dirt"))
-    //        {
-    //            int index = Random.Range(0, dirtAudioClips.Length);
-    //            return dirtAudioClips[index];
-    //        }
-    //        if (hit.transform.CompareTag("Metal"))
-    //        {
-    //            int index = Random.Range(0, metalAudioClips.Length);
-    //            return metalAudioClips[index];
-    //        }
-    //        if (hit.transform.CompareTag("Sand"))
-    //        {
-    //            int index = Random.Range(0, sandAudioClips.Length);
-    //            return sandAudioClips[index];
-    //        }
-    //        if (hit.transform.CompareTag("Wood"))
-    //        {
-    //            int index = Random.Range(0, woodAudioClips.Length);
-    //            return woodAudioClips[index];
-    //        }
-    //    }
-    //    else
-    //    {
-    //        int index = Random.Range(0, woodAudioClips.Length);
-    //        return woodAudioClips[index];
-    //    }
-    //}
 }
