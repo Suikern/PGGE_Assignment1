@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //HandleInputs();
-        //Move();
+        HandleInputs();
+        Move();
     }
 
     private void FixedUpdate()
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
     void Crouch()
     {
         mAnimator.SetBool("Crouch", crouch);
-        if(crouch)
+        if (crouch)
         {
             tempHeight = CameraConstants.CameraPositionOffset;
             HalfHeight = tempHeight;
