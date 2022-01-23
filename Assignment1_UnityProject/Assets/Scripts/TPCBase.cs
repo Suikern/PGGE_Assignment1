@@ -43,18 +43,17 @@ namespace PGGE
             // find the nearest collision point to the player
             // shift the camera position to the nearest intersected point
             //-------------------------------------------------------------------
-            LayerMask mask = LayerMask.GetMask("Wall");
-            float smoothing = 10f;
-            Vector3 cameraPos = mCameraTransform.position;
-            Vector3 distance = (mPlayerTransform.position - mCameraTransform.position);
-            Vector3 direction = distance.normalized;
-            RaycastHit hit;
-            while ( )
-            if (Physics.SphereCast(cameraPos, 0.2f, direction, out hit, Mathf.Infinity, mask)){
-                mCameraTransform.Translate((hit.point + direction) * smoothing * Time.deltaTime);
-                Debug.Log("AAAAAA");
-                
+            
+            LayerMask mask = LayerMask.GetMask("Wall"); //get any objects within the wall layer
+            float smoothing = 10f; //Smoothing value for the camera movement
+            Vector3 cameraPos = mCameraTransform.position; //Set camera position for easier refrence
+            Vector3 playerPos = mPlayerTransform.position; //Set player position for easier refrence
+            if (Physics.Linecast(playerPos, cameraPos, out RaycastHit hit, mask)) //Check if there is collison between player and camera
+            {
+                mCameraTransform.position = Vector3.Lerp(cameraPos, (cameraPos.normalized * hit.distance), 
+                    Time.deltaTime * smoothing);// Move the camera to the point where the ray impacts the wall
             }
+            
         }
 
         public abstract void Update();
